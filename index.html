@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unisoft - Think with Software</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .products {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+        }
+
+        .card-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .card-flowcut {
+            border-top: 5px solid #f093fb;
+        }
+
+        .card-xbs {
+            border-top: 5px solid #00f2fe;
+        }
+
+        .product-card h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            list-style: none;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .features li {
+            padding: 8px 0;
+            color: #555;
+        }
+
+        .features li:before {
+            content: "✨ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .btn-xbs {
+            background: linear-gradient(135deg, #00f2fe, #4facfe);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            margin-left: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: #f5f5f5;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 80px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: #00f2fe;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+                margin: 40px auto;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .product-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🚀 Unisoft</div>
+            <ul>
+                <li><a href="#flowcut">Flowcut</a></li>
+                <li><a href="#xbs">XBS Runtime</a></li>
+                <li><a href="#about">Über uns</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Think with Software</h1>
+        <p>Moderne, familienfreundliche Software für kreative Menschen</p>
+    </section>
+
+    <section class="products">
+        <div class="product-card card-flowcut" id="flowcut">
+            <div class="card-icon">🎬</div>
+            <h2>Flowcut</h2>
+            <p>Ein leichtes Schnittprogramm für alle - perfekt für Anfänger und Profis!</p>
+            <ul class="features">
+                <li>Einfache Benutzeroberfläche</li>
+                <li>Schnelle Videobearbeitung</li>
+                <li>Moderne Effekte und Filter</li>
+                <li>Kostenlos und Open Source (GPL 3.0)</li>
+            </ul>
+            <a href="https://github.com/I-Max-2717/flowcut/releases" class="btn">Jetzt herunterladen</a>
+            <a href="https://github.com/I-Max-2717/flowcut" class="btn btn-secondary">GitHub Repository</a>
+        </div>
+
+        <div class="product-card card-xbs" id="xbs">
+            <div class="card-icon">💻</div>
+            <h2>XBS Runtime</h2>
+            <p>Deine eigene Programmiersprache - ähnlich wie VBS, aber moderner!</p>
+            <ul class="features">
+                <li>VBS-ähnliche Syntax</li>
+                <li>C++ basiert für maximale Performance</li>
+                <li>Entwickler-freundlich</li>
+                <li>Open Source (MIT License)</li>
+            </ul>
+            <a href="https://github.com/I-Max-2717/XBS_Runtime/releases" class="btn btn-xbs">Jetzt herunterladen</a>
+            <a href="https://github.com/I-Max-2717/XBS_Runtime" class="btn btn-secondary">GitHub Repository</a>
+        </div>
+    </section>
+
+    <footer id="about">
+        <h3>🌟 Unisoft - Think with Software</h3>
+        <p>Wir entwickeln kreative und benutzerfreundliche Software für Familien und Profis.</p>
+        <p>Lizenziert unter GPL 3.0 (Flowcut) und MIT (XBS Runtime)</p>
+        <div class="footer-links">
+            <a href="https://github.com/I-Max-2717">Mein GitHub Profil</a>
+            <a href="https://github.com/I-Max-2717/flowcut">Flowcut Repository</a>
+            <a href="https://github.com/I-Max-2717/XBS_Runtime">XBS Runtime Repository</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 12px;">© 2026 Unisoft. All rights reserved.</p>
+    </footer>
+</body>
+</html>
